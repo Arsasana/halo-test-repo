@@ -1,4 +1,6 @@
 language: java
 addons:
   artifacts:
+    working_dir: out
+    debug: true
     s3_region: "us-west-2"
