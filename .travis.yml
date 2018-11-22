@@ -1,6 +1,9 @@
 language: java
-addons:
-  artifacts:
-    working_dir: out
-    debug: true
-    s3_region: "us-west-2"
+deploy:
+  provider: releases
+  api_key: $GITHUB_OAUTH_TOKEN
+  file_glob: true
+  file: $TRAVIS_BUILD_DIR/**/*
+  skip_cleanup: true
+  on:
+    tags: true
